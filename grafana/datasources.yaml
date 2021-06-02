@@ -29,21 +29,44 @@ datasources:
     version: 1
     # <bool> allow users to edit datasources from the UI.
     editable: true
-  - name: Mike-Prometheus
-    type: prometheus
-    access: proxy
-    orgId: 2
-    url: http://saladhouse.duckdns.org:9090
-    isDefault: true
-    version: 1
+   #################################
+#  - name: Loki Mike
+#    type: loki
+#    access: proxy
+#    orgId: 1
+#    url: http://saladhouse.duckdns.org:3100
+#    isDefault: false
+#    version: 1
     # <bool> allow users to edit datasources from the UI.
-    editable: true
-  - name: Mike-Loki
-    type: loki
-    access: proxy
-    orgId: 2
-    url: http://saladhouse.duckdns.org:3100
-    isDefault: false
-    version: 1
+#    editable: true
+    ###################################
+#  - name: Loki Felix
+#    type: loki
+#    access: proxy
+#    orgId: 1
+#    url: http://homemothership.duckdns.org:3100
+#    isDefault: false
+#    version: 1
     # <bool> allow users to edit datasources from the UI.
-    editable: true
+#    editable: true
+     ################################
+#  - name: Promethus Felix
+#    type: prometheus
+#    access: proxy
+#    orgId: 1
+#    url: http://homemothership.duckdns.org:9090
+#    isDefault: false
+#    version: 1
+    # <bool> allow users to edit datasources from the UI.
+#    editable: true
+   #################################
+#  - name: Prometheus Mike
+#    type: prometheus
+#    access: proxy
+#    orgId: 1
+#    url: http://saladhouse.duckdns.org:9090
+#    isDefault: false
+#    version: 1
+    # <bool> allow users to edit datasources from the UI.
+#    editable: true
+    ###################################
