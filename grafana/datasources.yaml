@@ -29,3 +29,21 @@ datasources:
     version: 1
     # <bool> allow users to edit datasources from the UI.
     editable: true
+  - name: Mike-Prometheus
+    type: prometheus
+    access: proxy
+    orgId: 2
+    url: http://saladhouse.duckdns.org:9090
+    isDefault: true
+    version: 1
+    # <bool> allow users to edit datasources from the UI.
+    editable: true
+  - name: Mike-Loki
+    type: loki
+    access: proxy
+    orgId: 2
+    url: http://saladhouse.duckdns.org:3100
+    isDefault: false
+    version: 1
+    # <bool> allow users to edit datasources from the UI.
+    editable: true
