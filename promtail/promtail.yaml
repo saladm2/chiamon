@@ -17,13 +17,6 @@ scrape_configs:
     labels:
       job: chia
       __path__: /var/log/chia/*
-- job_name: chia2
-  static_configs:
-  - targets:
-      - saladhouse.duckdns.org
-    labels:
-      job: chia2
-      __path__: /var/log/chia/chia2/*
 - job_name: plotter
   static_configs:
   - targets:
