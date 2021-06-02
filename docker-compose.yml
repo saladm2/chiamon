@@ -9,7 +9,7 @@ services:
       - "/var/log/chia/debug.log"
       - "-logtostderr"
     volumes:
-      - ${HOME}/.chia/mainnet/log/:/var/log/chia/
+      - /mnt/user/appdata/machinaris/mainnet/log/:/var/log/chia/
     network_mode: host
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
@@ -17,7 +17,7 @@ services:
       - '--path.rootfs=/host'
     pid: host
     volumes:
-      - '/:/host:ro,rslave'
+      - '/:/host:ro'
     network_mode: host
   chia_exporter:
     build: chia_exporter
@@ -27,8 +27,8 @@ services:
       - "-key"
       - "/etc/chia.key"
     volumes:
-      - ${HOME}/.chia/mainnet/config/ssl/full_node/private_full_node.crt:/etc/chia.crt
-      - ${HOME}/.chia/mainnet/config/ssl/full_node/private_full_node.key:/etc/chia.key
+      - /mnt/user/appdata/machinaris/mainnet/config/ssl/full_node/private_full_node.crt:/etc/chia.crt
+      - /mnt/user/appdata/machinaris/mainnet/config/ssl/full_node/private_full_node.key:/etc/chia.key
     network_mode: host
   prometheus:
     build: prometheus
@@ -42,8 +42,8 @@ services:
   promtail:
     build: promtail
     volumes:
-      - ${HOME}/.chia/mainnet/log:/var/log/chia
-      - ${HOME}/.chia/mainnet/plotter:/var/log/plotter
+      - /mnt/user/appdata/machinaris/mainnet/log:/var/log/chia
+      - /mnt/user/appdata/machinaris/mainnet/plotter:/var/log/plotter
     command: -config.file=/etc/promtail/config.yml
     network_mode: host
   grafana:
