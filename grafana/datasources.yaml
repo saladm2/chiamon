@@ -30,15 +30,15 @@ datasources:
     # <bool> allow users to edit datasources from the UI.
     editable: true
    #################################
-#  - name: Loki Mike
-#    type: loki
-#    access: proxy
-#    orgId: 1
-#    url: http://saladhouse.duckdns.org:3100
-#    isDefault: false
-#    version: 1
+  - name: Loki Mike
+    type: loki
+    access: proxy
+    orgId: 1
+    url: http://saladhouse.duckdns.org:3100
+    isDefault: false
+    version: 1
     # <bool> allow users to edit datasources from the UI.
-#    editable: true
+    editable: true
     ###################################
 #  - name: Loki Felix
 #    type: loki
@@ -60,13 +60,13 @@ datasources:
     # <bool> allow users to edit datasources from the UI.
 #    editable: true
    #################################
-#  - name: Prometheus Mike
-#    type: prometheus
-#    access: proxy
-#    orgId: 1
-#    url: http://saladhouse.duckdns.org:9090
-#    isDefault: false
-#    version: 1
+  - name: Prometheus Mike
+    type: prometheus
+    access: proxy
+    orgId: 1
+    url: http://saladhouse.duckdns.org:9090
+    isDefault: false
+    version: 1
     # <bool> allow users to edit datasources from the UI.
-#    editable: true
+    editable: true
     ###################################

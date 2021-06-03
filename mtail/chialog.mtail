@@ -2,28 +2,15 @@
 # 2021-04-24T11:01:53.390 harvester chia.harvester.harvester: INFO     1 plots were eligible for farming 940b588c2a... Found 0 proofs. Time: 0.98087 s. Total 19 plots
 
 counter chia_harvester_blocks_total
-gauge chia_plots_passed_filter
 gauge chia_harvester_plots_total
 gauge chia_harvester_plots_eligible
-gauge chia_timestamp
 counter chia_harvester_proofs_total
-counter chia_number_of_challenges
-gauge chia_total_plots
-gauge chia_eligible_plots
-counter chia_proofs_found
 # keep this from getting too high cardinality, plots_eligible will be one of: 0, 1, 2, many
 histogram chia_harvester_search_time buckets 0.1, 0.25, 0.5, 0.75, 1, 2.5, 5, 10, 30 by plots_eligible
 
-/^(?P<timestamp>\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d+) harvester chia.harvester.harvester: \w+\s+ (?P<eligible_plots>\d?) plots were eligible for farming \w+\.\.\. Found (?P<proofs>\d+) proofs\. Time: (?P<search_time>[\d\.]+) s\. Total (?P<total_plots>\d+) plots$/ {
+/^(?P<timestamp>\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d+) harvester chia.harvester.harvester: \w+\s+ (?P<eligible_plots>\d+) plots were eligible for farming \w+\.\.\. Found (?P<proofs>\d+) proofs\. Time: (?P<search_time>[\d\.]+) s\. Total (?P<total_plots>\d+) plots$/ {
     strptime($timestamp, "2006-01-02T15:04:05")
-    chia_number_of_challenges++
-    chia_total_plots = $total_plots
-    chia_eligible_plots = $eligible_plots
-    chia_proofs_found += $proofs
-    check_duration = $search_time
-	chia_plots_passed_filter = $eligible_plots
-	chia_timestamp = $timestamp
-	chia_harvester_blocks_total++
+    chia_harvester_blocks_total++
     chia_harvester_plots_total = $total_plots
     chia_harvester_plots_eligible = $eligible_plots
     chia_harvester_proofs_total += $proofs
