@@ -26,9 +26,246 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": 1,
-  "iteration": 1621098681551,
+  "iteration": 1622756886212,
   "links": [],
   "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "-- Mixed --",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 34,
+      "interval": "10s",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "maxDataPoints": 20,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.7",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": "Prometheus",
+          "exemplar": true,
+          "expr": "chia_harvester_plots_eligible",
+          "hide": false,
+          "interval": "10s",
+          "legendFormat": "Plots passed filter",
+          "refId": "A"
+        },
+        {
+          "datasource": "Prometheus Mike",
+          "exemplar": true,
+          "expr": "chia_harvester_plots_eligible",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Plots passed filter mike",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Total Plots Passed the Filter",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "Plots passed filter",
+                "Plots passed filter mike"
+              ],
+              "reducer": "sum"
+            },
+            "replaceFields": true
+          }
+        }
+      ],
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1062",
+          "decimals": 0,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": "15",
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1063",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "-- Mixed --",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 37,
+      "interval": "10s",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "maxDataPoints": 20,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.7",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": "Prometheus",
+          "exemplar": true,
+          "expr": "chia_harvester_plots_eligible",
+          "hide": false,
+          "interval": "10s",
+          "legendFormat": "Local Plots",
+          "refId": "A"
+        },
+        {
+          "datasource": "Prometheus Mike",
+          "exemplar": true,
+          "expr": "",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Salad Plots",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Local Plots Passed the Filter",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transformations": [],
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1062",
+          "decimals": 0,
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": "10",
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1063",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
     {
       "datasource": "Prometheus",
       "fieldConfig": {
@@ -74,7 +311,7 @@
         "h": 4,
         "w": 6,
         "x": 0,
-        "y": 0
+        "y": 8
       },
       "id": 2,
       "options": {
@@ -92,7 +329,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.4",
+      "pluginVersion": "7.5.7",
       "targets": [
         {
           "expr": "chia_harvester_proofs_total",
@@ -105,7 +342,7 @@
       "type": "stat"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": "-- Mixed --",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -127,13 +364,25 @@
             ]
           }
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byType",
+              "options": "time"
+            },
+            "properties": [
+              {
+                "id": "displayName"
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 7,
         "w": 6,
         "x": 6,
-        "y": 0
+        "y": 8
       },
       "id": 4,
       "options": {
@@ -151,16 +400,48 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.4",
+      "pluginVersion": "7.5.7",
       "targets": [
         {
+          "datasource": "Prometheus Mike",
+          "exemplar": true,
           "expr": "chia_harvester_plots_total",
+          "format": "table",
+          "hide": false,
+          "instant": true,
           "interval": "",
-          "legendFormat": "Plots",
+          "legendFormat": "Salad Plots",
           "refId": "A"
+        },
+        {
+          "datasource": "Prometheus",
+          "exemplar": true,
+          "expr": "chia_harvester_plots_total",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "Local Plots",
+          "refId": "B"
         }
       ],
-      "title": "Plots",
+      "title": "Total plots",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "Value 1",
+                "Value 2"
+              ],
+              "reducer": "sum"
+            },
+            "replaceFields": true
+          }
+        }
+      ],
       "type": "stat"
     },
     {
@@ -183,7 +464,7 @@
         "h": 5,
         "w": 12,
         "x": 12,
-        "y": 0
+        "y": 8
       },
       "hiddenSeries": false,
       "id": 17,
@@ -208,7 +489,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.4",
+      "pluginVersion": "7.5.7",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -302,7 +583,7 @@
         "h": 3,
         "w": 6,
         "x": 0,
-        "y": 4
+        "y": 12
       },
       "id": 28,
       "options": {
@@ -320,7 +601,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.4",
+      "pluginVersion": "7.5.7",
       "targets": [
         {
           "exemplar": true,
@@ -352,7 +633,7 @@
         "h": 5,
         "w": 12,
         "x": 12,
-        "y": 5
+        "y": 13
       },
       "hiddenSeries": false,
       "id": 19,
@@ -375,7 +656,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.4",
+      "pluginVersion": "7.5.7",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -474,7 +755,7 @@
         "h": 6,
         "w": 6,
         "x": 0,
-        "y": 7
+        "y": 15
       },
       "hiddenSeries": false,
       "id": 10,
@@ -494,7 +775,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.4",
+      "pluginVersion": "7.5.7",
       "pointradius": 2,
       "points": true,
       "renderer": "flot",
@@ -627,7 +908,7 @@
         "h": 6,
         "w": 6,
         "x": 6,
-        "y": 7
+        "y": 15
       },
       "id": 15,
       "options": {
@@ -643,7 +924,7 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "7.5.4",
+      "pluginVersion": "7.5.7",
       "targets": [
         {
           "exemplar": true,
@@ -682,7 +963,7 @@
         "h": 5,
         "w": 12,
         "x": 12,
-        "y": 10
+        "y": 18
       },
       "hiddenSeries": false,
       "id": 23,
@@ -703,7 +984,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.4",
+      "pluginVersion": "7.5.7",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -808,7 +1089,7 @@
         "h": 7,
         "w": 4,
         "x": 0,
-        "y": 13
+        "y": 21
       },
       "id": 14,
       "links": [],
@@ -827,7 +1108,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.4",
+      "pluginVersion": "7.5.7",
       "targets": [
         {
           "exemplar": true,
@@ -847,7 +1128,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "-- Mixed --",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -948,87 +1229,9 @@
         "h": 7,
         "w": 4,
         "x": 4,
-        "y": 13
+        "y": 21
       },
       "id": 25,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.5.4",
-      "targets": [
-        {
-          "expr": "chia_blockchain_sync_status",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "status",
-          "refId": "B"
-        },
-        {
-          "expr": "chia_peers_count{type=\"1\"}",
-          "interval": "",
-          "legendFormat": "peers",
-          "refId": "A"
-        },
-        {
-          "expr": "chia_blockchain_space_bytes",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "netspace",
-          "refId": "C"
-        }
-      ],
-      "title": "Node Status",
-      "type": "stat"
-    },
-    {
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 21474836480
-              },
-              {
-                "color": "red",
-                "value": 35433480202
-              }
-            ]
-          },
-          "unit": "bytes"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 4,
-        "x": 8,
-        "y": 13
-      },
-      "id": 21,
-      "links": [],
       "options": {
         "colorMode": "background",
         "graphMode": "area",
@@ -1044,32 +1247,188 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.4",
+      "pluginVersion": "7.5.7",
       "targets": [
         {
+          "datasource": "Prometheus",
           "exemplar": true,
-          "expr": "sum(increase(node_network_receive_bytes_total{instance=\"$node\",device=~\"$interfaces\"}[24h]))",
+          "expr": "chia_harvester_plots_total",
+          "hide": false,
+          "instant": true,
           "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": " rx",
-          "metric": "node_network_receive_bytes",
-          "refId": "A",
-          "step": 10
+          "legendFormat": "Local Plots",
+          "panelId": 35,
+          "refId": "A"
         },
         {
+          "datasource": "Prometheus Mike",
           "exemplar": true,
-          "expr": "sum(increase(node_network_transmit_bytes_total{instance=\"$node\",device=~\"$interfaces\"}[24h]))",
+          "expr": "chia_harvester_plots_total",
+          "hide": false,
+          "instant": true,
           "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "tx",
-          "metric": "node_network_transmit_bytes",
-          "refId": "B",
-          "step": 10
+          "legendFormat": "Salad Plots",
+          "refId": "B"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Network Usage (last 24hr)",
+      "title": "Plots",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "Total",
+            "binary": {
+              "left": "Local Plots",
+              "operator": "+",
+              "reducer": "sum",
+              "right": "Salad Plots"
+            },
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "Local Plots",
+                "Salad Plots"
+              ],
+              "reducer": "sum"
+            }
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "-- Mixed --",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 5
+              },
+              {
+                "color": "green",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "status"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "from": "",
+                    "id": 1,
+                    "text": "Not synced",
+                    "to": "",
+                    "type": 1,
+                    "value": "0"
+                  },
+                  {
+                    "from": "",
+                    "id": 2,
+                    "text": "Syncing",
+                    "to": "",
+                    "type": 1,
+                    "value": "1"
+                  },
+                  {
+                    "from": "",
+                    "id": 3,
+                    "text": "Synced",
+                    "to": "",
+                    "type": 1,
+                    "value": "2"
+                  }
+                ]
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red",
+                      "value": null
+                    },
+                    {
+                      "color": "orange",
+                      "value": 1
+                    },
+                    {
+                      "color": "green",
+                      "value": 2
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "netspace"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "bytes"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 8,
+        "y": 21
+      },
+      "id": 35,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.7",
+      "targets": [
+        {
+          "datasource": "Prometheus",
+          "exemplar": true,
+          "expr": "chia_harvester_plots_total",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Local Plots",
+          "refId": "A"
+        }
+      ],
+      "title": "Local Plots",
       "type": "stat"
     },
     {
@@ -1093,7 +1452,7 @@
         "h": 5,
         "w": 12,
         "x": 12,
-        "y": 15
+        "y": 23
       },
       "hiddenSeries": false,
       "id": 27,
@@ -1114,7 +1473,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.4",
+      "pluginVersion": "7.5.7",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1213,6 +1572,116 @@
       }
     },
     {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 21474836480
+              },
+              {
+                "color": "red",
+                "value": 35433480202
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 8,
+        "y": 28
+      },
+      "id": 21,
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.7",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(increase(node_network_receive_bytes_total{instance=\"$node\",device=~\"$interfaces\"}[24h]))",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": " rx",
+          "metric": "node_network_receive_bytes",
+          "refId": "A",
+          "step": 10
+        },
+        {
+          "exemplar": true,
+          "expr": "sum(increase(node_network_transmit_bytes_total{instance=\"$node\",device=~\"$interfaces\"}[24h]))",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "tx",
+          "metric": "node_network_transmit_bytes",
+          "refId": "B",
+          "step": 10
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Network Usage (last 24hr)",
+      "type": "stat"
+    },
+    {
+      "datasource": "Loki",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 28
+      },
+      "id": 30,
+      "options": {
+        "dedupStrategy": "none",
+        "showLabels": false,
+        "showTime": true,
+        "sortOrder": "Descending",
+        "wrapLogMessage": false
+      },
+      "pluginVersion": "7.5.4",
+      "targets": [
+        {
+          "expr": "{job=\"plotter\"}!=\"uniform sort\"",
+          "refId": "A"
+        }
+      ],
+      "title": "Plotter Logs",
+      "type": "logs"
+    },
+    {
       "datasource": "Loki",
       "fieldConfig": {
         "defaults": {},
@@ -1222,7 +1691,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 20
+        "y": 35
       },
       "id": 31,
       "options": {
@@ -1243,37 +1712,142 @@
       "type": "logs"
     },
     {
-      "datasource": "Loki",
+      "datasource": "Prometheus Mike",
       "fieldConfig": {
-        "defaults": {},
-        "overrides": []
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 5
+              },
+              {
+                "color": "green",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "status"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "from": "",
+                    "id": 1,
+                    "text": "Not synced",
+                    "to": "",
+                    "type": 1,
+                    "value": "0"
+                  },
+                  {
+                    "from": "",
+                    "id": 2,
+                    "text": "Syncing",
+                    "to": "",
+                    "type": 1,
+                    "value": "1"
+                  },
+                  {
+                    "from": "",
+                    "id": 3,
+                    "text": "Synced",
+                    "to": "",
+                    "type": 1,
+                    "value": "2"
+                  }
+                ]
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red",
+                      "value": null
+                    },
+                    {
+                      "color": "orange",
+                      "value": 1
+                    },
+                    {
+                      "color": "green",
+                      "value": 2
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "netspace"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "bytes"
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 7,
+        "w": 4,
         "x": 12,
-        "y": 20
+        "y": 36
       },
-      "id": 30,
+      "id": 36,
       "options": {
-        "dedupStrategy": "none",
-        "showLabels": false,
-        "showTime": true,
-        "sortOrder": "Descending",
-        "wrapLogMessage": false
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "7.5.4",
+      "pluginVersion": "7.5.7",
       "targets": [
         {
-          "expr": "{job=\"plotter\"}!=\"uniform sort\"",
+          "exemplar": true,
+          "expr": "chia_harvester_plots_total",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "Salad Plots",
           "refId": "A"
         }
       ],
-      "title": "Plotter Logs",
-      "type": "logs"
+      "title": "Salad Plots",
+      "type": "stat"
     }
   ],
-  "refresh": "1m",
+  "refresh": "10s",
   "schemaVersion": 27,
   "style": "dark",
   "tags": [],
@@ -1290,7 +1864,7 @@
         "definition": "label_values(node_filesystem_size_bytes, instance)",
         "description": null,
         "error": null,
-        "hide": 0,
+        "hide": 1,
         "includeAll": false,
         "label": null,
         "multi": false,
@@ -1325,7 +1899,7 @@
         "definition": "label_values(node_filesystem_size_bytes, mountpoint)",
         "description": null,
         "error": null,
-        "hide": 0,
+        "hide": 1,
         "includeAll": true,
         "label": null,
         "multi": true,
@@ -1360,7 +1934,7 @@
         "definition": "label_values(node_disk_io_time_seconds_total, device)",
         "description": null,
         "error": null,
-        "hide": 0,
+        "hide": 1,
         "includeAll": true,
         "label": null,
         "multi": true,
@@ -1395,7 +1969,7 @@
         "definition": "label_values(node_network_receive_bytes_total, device)",
         "description": null,
         "error": null,
-        "hide": 0,
+        "hide": 1,
         "includeAll": true,
         "label": null,
         "multi": true,
@@ -1418,12 +1992,12 @@
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Chia",
   "uid": "P-ipES9Mz",
-  "version": 2
+  "version": 48
 }
