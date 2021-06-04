@@ -1,0 +1,105 @@
+{
+  "datasource": "-- Mixed --",
+  "fieldConfig": {
+    "defaults": {
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          {
+            "color": "green",
+            "value": null
+          },
+          {
+            "color": "red",
+            "value": 80
+          }
+        ]
+      },
+      "mappings": [],
+      "color": {
+        "mode": "thresholds"
+      },
+      "unit": "decgbytes",
+      "decimals": 1
+    },
+    "overrides": [
+      {
+        "matcher": {
+          "id": "byType",
+          "options": "time"
+        },
+        "properties": [
+          {
+            "id": "displayName"
+          }
+        ]
+      }
+    ]
+  },
+  "gridPos": {
+    "h": 7,
+    "w": 6,
+    "x": 6,
+    "y": 8
+  },
+  "id": 4,
+  "options": {
+    "reduceOptions": {
+      "values": false,
+      "calcs": [
+        "lastNotNull"
+      ],
+      "fields": ""
+    },
+    "orientation": "horizontal",
+    "text": {},
+    "textMode": "auto",
+    "colorMode": "value",
+    "graphMode": "none",
+    "justifyMode": "auto"
+  },
+  "pluginVersion": "7.5.7",
+  "targets": [
+    {
+      "expr": "chia_harvester_plots_total*108.837",
+      "legendFormat": "Salad Plots",
+      "interval": "",
+      "exemplar": true,
+      "datasource": "Prometheus Mike",
+      "format": "table",
+      "hide": false,
+      "instant": true,
+      "refId": "A"
+    },
+    {
+      "expr": "chia_harvester_plots_total*108.837",
+      "legendFormat": "Local Plots",
+      "interval": "",
+      "exemplar": true,
+      "datasource": "Prometheus",
+      "format": "table",
+      "hide": false,
+      "instant": true,
+      "refId": "B"
+    }
+  ],
+  "title": "Total plot size",
+  "transformations": [
+    {
+      "id": "calculateField",
+      "options": {
+        "mode": "reduceRow",
+        "reduce": {
+          "include": [
+            "Value 1",
+            "Value 2"
+          ],
+          "reducer": "sum"
+        },
+        "replaceFields": true
+      }
+    }
+  ],
+  "type": "stat",
+  "description": ""
+}
