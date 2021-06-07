@@ -7,47 +7,10 @@ services:
       - "/etc/mtail"
       - "-logs"
       - "/var/log/chia/debug.log"
+      - "-logs"
+      - "/var/log/plotter/*"
       - "-logtostderr"
     volumes:
       - /mnt/user/appdata/machinaris/mainnet/log/:/var/log/chia/
+      - /mnt/user/appdata/machinaris/plotman/logs/:/var/log/plotter/
     network_mode: host
-  node_exporter:
-    image: quay.io/prometheus/node-exporter:latest
-    command:
-      - '--path.rootfs=/host'
-    pid: host
-    volumes:
-      - '/:/host:ro'
-    network_mode: host
-  chia_exporter:
-    build: chia_exporter
-    command:
-      - "-cert"
-      - "/etc/chia.crt"
-      - "-key"
-      - "/etc/chia.key"
-    volumes:
-      - /mnt/user/appdata/machinaris/mainnet/config/ssl/full_node/private_full_node.crt:/etc/chia.crt
-      - /mnt/user/appdata/machinaris/mainnet/config/ssl/full_node/private_full_node.key:/etc/chia.key
-    network_mode: host
-  prometheus:
-    build: prometheus
-    volumes:
-      - prom_data:/prometheus
-    network_mode: host
-  loki:
-    image: grafana/loki:2.0.0
-    command: -config.file=/etc/loki/local-config.yaml
-    network_mode: host
-  promtail:
-    build: promtail
-    volumes:
-      - /mnt/user/appdata/machinaris/mainnet/log:/var/log/chia
-      - /mnt/user/appdata/machinaris/mainnet/plotter:/var/log/plotter
-    command: -config.file=/etc/promtail/config.yml
-    network_mode: host
-  grafana:
-    build: grafana
-    network_mode: host
-volumes:
-  prom_data:
