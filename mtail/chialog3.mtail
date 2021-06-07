@@ -1,0 +1,5 @@
+gauge plotter_phase_one_time
+
+/Time for phase 1 = (?P<phase_one_time>\d{4}\.\d{3})*/ {
+    plotter_phase_one_time = $phase_one_time
+}
